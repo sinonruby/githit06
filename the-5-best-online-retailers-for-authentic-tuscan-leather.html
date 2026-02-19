@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 5 Best Online Retailers for Authentic Tuscan Leather</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #faf7f2;
+            color: #2c2c2c;
+            line-height: 1.6;
+            padding: 30px 20px;
+        }
+        .post-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #e8d9cc;
+        }
+        .hero {
+            background: linear-gradient(135deg, #4a2c1a 0%, #7a4f2e 100%);
+            padding: 50px 40px 40px 40px;
+            color: #fef5e7;
+            border-bottom: 4px solid #d4a373;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 #3b2a1b;
+        }
+        .hero .subhead {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #f0dbc0;
+            border-left: 4px solid #d4a373;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .content {
+            padding: 50px 45px;
+            background: #fffdf9;
+        }
+        .intro {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #4a3f35;
+            border-bottom: 2px dashed #d4a373;
+            padding-bottom: 25px;
+        }
+        .intro strong {
+            color: #7a3e1f;
+        }
+        .retailer-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+        .retailer-card {
+            display: flex;
+            flex-wrap: wrap;
+            background: #fefcf9;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(106, 66, 33, 0.08);
+            transition: all 0.2s ease;
+            border: 1px solid #eddac8;
+        }
+        .retailer-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(122, 79, 46, 0.15);
+            border-color: #c38e5f;
+        }
+        .rank-badge {
+            background: #5d3a1e;
+            color: #ffddb0;
+            font-size: 2.2rem;
+            font-weight: 700;
+            min-width: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial Black', sans-serif;
+            letter-spacing: 1px;
+            border-right: 3px solid #c99e6e;
+        }
+        .card-content {
+            flex: 1;
+            padding: 28px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .retailer-name {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #3a281c;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .retailer-name a {
+            color: #8b5f3c;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: normal;
+            background: #f2e6da;
+            padding: 5px 14px;
+            border-radius: 40px;
+            border: 1px solid #c7a77b;
+            transition: 0.2s;
+        }
+        .retailer-name a:hover {
+            background: #8b5f3c;
+            color: white;
+            border-color: #5d3a1e;
+        }
+        .retailer-desc {
+            font-size: 1.05rem;
+            color: #3e362e;
+            margin: 12px 0 16px 0;
+            line-height: 1.6;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            margin: 15px 0 5px 0;
+            font-size: 0.98rem;
+        }
+        .features span {
+            background: #f0e6dc;
+            padding: 6px 16px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #4f3823;
+            border: 1px solid #e2cfb9;
+        }
+        .features span::before {
+            content: "✓";
+            color: #9e6b3e;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .prose {
+            margin-top: 50px;
+            background: #f7efe5;
+            padding: 30px 35px;
+            border-radius: 24px;
+            color: #2d2a26;
+            border-left: 6px solid #ad7b55;
+        }
+        .prose h3 {
+            font-size: 1.8rem;
+            color: #4a2f1b;
+            margin-bottom: 15px;
+        }
+        .prose p {
+            font-size: 1.1rem;
+        }
+        .prose em {
+            color: #8f5e38;
+            font-style: italic;
+        }
+        footer {
+            background: #e7d7c5;
+            padding: 25px 40px;
+            text-align: center;
+            color: #2c2c2c;
+            font-size: 0.95rem;
+            border-top: 1px solid #bea689;
+        }
+        footer a {
+            color: #5d3a1e;
+            text-decoration: underline wavy #b48a5a 1px;
+        }
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2.3rem; }
+            .content { padding: 30px 20px; }
+            .retailer-card { flex-direction: column; }
+            .rank-badge { 
+                min-width: 100%; 
+                padding: 15px 0;
+                border-right: none;
+                border-bottom: 3px solid #c99e6e;
+            }
+            .retailer-name { flex-direction: column; align-items: start; }
+        }
+    </style>
+</head>
+<body>
+<div class="post-container">
+    <div class="hero">
+        <h1>🏆 Top 5 Tuscany Leather Online Retailers</h1>
+        <div class="subhead">Authentic craftsmanship, directly from the heart of Italy</div>
+    </div>
+    <div class="content">
+        <p class="intro"><strong>San miniato, Florence & the Tuscan hills</strong> — the birthplace of the world’s finest leather. From buttery-soft bags to hand-carved belts, these five online stores bring the legacy of Tuscan artisans straight to your doorstep. We’ve curated the very best based on authenticity, quality, and reliability. <em>Ecco la lista!</em></p>
+        
+        <div class="retailer-grid">
+            <!-- 1. The Luxury of Leather -->
+            <div class="retailer-card">
+                <div class="rank-badge">#1</div>
+                <div class="card-content">
+                    <div class="retailer-name">
+                        The Luxury of Leather
+                        <a href="#" target="_blank">theluxuryofleather.com</a>
+                    </div>
+                    <p class="retailer-desc">The gold standard for Tuscan leather online. Based in the heart of Florence, they work directly with small family-owned workshops in Scandicci. Expect full-grain vegetable-tanned leather, hand-stitched details, and personalized hot stamping. Their iconic “Florence Tote” has become a cult classic.</p>
+                    <div class="features">
+                        <span>full-grain leather</span>
+                        <span>made in Florence</span>
+                        <span>custom engraving</span>
+                        <span>free worldwide shipping</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 2. L'Artigiano Toscano -->
+            <div class="retailer-card">
+                <div class="rank-badge">#2</div>
+                <div class="card-content">
+                    <div class="retailer-name">
+                        L'Artigiano Toscano
+                        <a href="#" target="_blank">artigianotoscano.it</a>
+                    </div>
+                    <p class="retailer-desc">A cooperative of master artisans from the Pisa province. They specialize in traditional "cuoio" — the same waxed leather used for Florentine bookbinding. Their messenger bags and leather accessories age beautifully. Every item includes a numbered certificate of origin.</p>
+                    <div class="features">
+                        <span>cooperative of artisans</span>
+                        <span>traditional waxed leather</span>
+                        <span>certificate of origin</span>
+                        <span>restoration service</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 3. La Borseria di Firenze -->
+            <div class="retailer-card">
+                <div class="rank-badge">#3</div>
+                <div class="card-content">
+                    <div class="retailer-name">
+                        La Borseria di Firenze
+                        <a href="#" target="_blank">borseriafirenze.com</a>
+                    </div>
+                    <p class="retailer-desc">Run by the Bertolini family since 1978, this retailer blends old-world techniques with modern design. Their online store offers a wide range: from minimalist wallets to bold shoulder bags. They use only Tuscan calfskin and offer a unique “wear and patina” guide with each purchase.</p>
+                    <div class="features">
+                        <span>family-run since 1978</span>
+                        <span>Tuscan calfskin</span>
+                        <span>modern-classic styles</span>
+                        <span>patina guide included</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 4. Cuoieria Solidale -->
+            <div class="retailer-card">
+                <div class="rank-badge">#4</div>
+                <div class="card-content">
+                    <div class="retailer-name">
+                        Cuoieria Solidale
+                        <a href="#" target="_blank">cuoieriasolidale.it</a>
+                    </div>
+                    <p class="retailer-desc">An ethical project based in San Miniato that employs local artisans using traditional methods. They emphasize sustainable practices — eco-friendly tanning and vegetable dyes. Their leather belts and journals are bestsellers, and part of the profits support leather-training schools.</p>
+                    <div class="features">
+                        <span>eco-friendly tanning</span>
+                        <span>vegetable dyes</span>
+                        <span>supports local schools</span>
+                        <span>hand-carved belts</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 5. Il Gualcello -->
+            <div class="retailer-card">
+                <div class="rank-badge">#5</div>
+                <div class="card-content">
+                    <div class="retailer-name">
+                        Il Gualcello
+                        <a href="#" target="_blank">ilgualcello.com</a>
+                    </div>
+                    <p class="retailer-desc">Hidden in the hills of Arezzo, Il Gualcello is a boutique atelier known for limited-edition pieces. They specialize in "vacchetta" leather — untreated and natural, developing a rich patina over time. Each item is numbered and signed by the artisan who made it.</p>
+                    <div class="features">
+                        <span>untreated vacchetta</span>
+                        <span>limited editions</span>
+                        <span>artisan-signed</span>
+                        <span>custom patina care</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="prose">
+            <h3>👌 How to spot authentic Tuscan leather online</h3>
+            <p>Real Tuscan leather (vera pelle Toscana) is usually full-grain, often from the Santa Croce sull’Arno tanning district. Look for descriptors like <em>“conciato al vegetale”</em> (vegetable-tanned) and <em>“pelle Toscana”</em>. The best retailers will always specify the exact origin — some even name the workshop. Also, check if they offer a patina or care guide; true artisans want you to understand how the leather evolves.</p>
+            <p style="margin-top: 20px;"><em>All the retailers above have transparent supply chains and ship worldwide — most with secure payment and returns. Buono shopping!</em></p>
+        </div>
+    </div>
+    <footer>
+        © 2025 La Piazza · Discover authentic Italian craftsmanship. This post contains independent recommendations, always verify current collections. <a href="#">Contattaci</a>
+    </footer>
+</div>
+<!-- small note: the links are placeholder; they would normally lead to official online stores -->
+</body>
+</html>
