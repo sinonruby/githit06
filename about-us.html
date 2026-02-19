@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About us - DataBazar</title>
+  <!-- pure static about us page, minimal & expressive -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f6f4;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e1b18;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.8rem 2rem;
+    }
+
+    /* header / breadcrumb */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .logo-mark {
+      font-weight: 500;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      background: #e6dfd7;
+      padding: 0.3rem 1.4rem 0.3rem 1.4rem;
+      border-radius: 60px;
+      color: #2a241e;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b3f36;
+      margin-left: 2rem;
+      font-weight: 450;
+      border-bottom: 1px solid transparent;
+    }
+    .nav-links a:hover {
+      border-bottom: 1px solid #b7a48e;
+    }
+    .nav-links a.active {
+      border-bottom: 2px solid #8c735a;
+    }
+
+    /* main about header */
+    .about-header {
+      margin-bottom: 4rem;
+    }
+    .about-header h1 {
+      font-size: 4rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #2e251f;
+      max-width: 900px;
+    }
+    .about-header h1 span {
+      background: #e7d9cc;
+      padding: 0.2rem 1rem 0.2rem 1rem;
+      border-radius: 100px;
+      font-size: 2.8rem;
+      font-weight: 350;
+      display: inline-block;
+    }
+    .about-header .sub {
+      font-size: 1.3rem;
+      color: #5b4d40;
+      margin-top: 1.2rem;
+      border-left: 4px solid #b89d85;
+      padding-left: 2rem;
+    }
+
+    /* two column story */
+    .story-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin: 3.5rem 0 5rem 0;
+    }
+    .story-text {
+      flex: 2;
+      min-width: 300px;
+    }
+    .story-text h2 {
+      font-size: 2rem;
+      font-weight: 380;
+      margin-bottom: 1.5rem;
+      color: #3c3027;
+      border-bottom: 2px solid #dacfc4;
+      padding-bottom: 0.6rem;
+    }
+    .story-text p {
+      font-size: 1.2rem;
+      color: #3d352e;
+      margin-bottom: 1.5rem;
+      font-weight: 350;
+    }
+    .story-text p.lead {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #2f251f;
+    }
+    .story-highlight {
+      flex: 1.2;
+      background: #eee7e0;
+      border-radius: 38px;
+      padding: 2rem 2rem;
+      border: 1px solid #cfc0b2;
+    }
+    .story-highlight h3 {
+      font-size: 1.8rem;
+      font-weight: 350;
+      margin-bottom: 1.5rem;
+      color: #2f2a25;
+    }
+    .stat-list {
+      list-style: none;
+    }
+    .stat-list li {
+      margin-bottom: 1.8rem;
+      border-bottom: 1px dashed #c7b6a4;
+      padding-bottom: 0.8rem;
+    }
+    .stat-list li strong {
+      font-size: 2.2rem;
+      font-weight: 320;
+      color: #5a4432;
+      display: block;
+      line-height: 1.2;
+    }
+    .stat-list li span {
+      color: #4e4035;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* values / pillars */
+    .values-section {
+      background: #ffffffd4;
+      border-radius: 58px;
+      padding: 3rem 3rem;
+      margin: 5rem 0;
+      border: 1px solid #d6c9bc;
+      box-shadow: 0 15px 30px -20px #b4a18b;
+    }
+    .values-section h2 {
+      font-size: 2.6rem;
+      font-weight: 330;
+      margin-bottom: 2.5rem;
+      color: #30251e;
+    }
+    .value-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .value-card {
+      flex: 1 1 200px;
+      background: #f4efe9;
+      border-radius: 34px;
+      padding: 2rem 1.5rem;
+      border: 1px solid #e2d4c5;
+      transition: all 0.15s;
+    }
+    .value-card:hover {
+      background: #faf5ef;
+      border-color: #bbaa96;
+    }
+    .value-card .emoji-big {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .value-card h3 {
+      font-size: 1.7rem;
+      font-weight: 370;
+      margin-bottom: 0.8rem;
+    }
+    .value-card p {
+      color: #4d4239;
+    }
+
+    /* team section (static / about us) */
+    .team-section {
+      margin: 5rem 0 3rem;
+    }
+    .team-section h2 {
+      font-size: 2.5rem;
+      font-weight: 350;
+      color: #30251e;
+      border-left: 8px solid #b59578;
+      padding-left: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 2rem;
+      justify-content: center;
+    }
+    .team-member {
+      background: white;
+      border-radius: 38px;
+      padding: 2rem 2rem 2rem 2rem;
+      flex: 1 1 220px;
+      max-width: 260px;
+      box-shadow: 0 6px 16px rgba(90, 70, 50, 0.05);
+      border: 1px solid #eaded2;
+      text-align: center;
+    }
+    .member-avatar {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      background: #f0e5db;
+      border-radius: 50%;
+      width: 110px;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      border: 3px solid #fff3ea;
+    }
+    .team-member h4 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-top: 0.8rem;
+    }
+    .team-member .role {
+      color: #9c826b;
+      font-weight: 450;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+    }
+    .team-member .bio-short {
+      font-size: 0.95rem;
+      color: #4e4136;
+      margin-top: 0.8rem;
+      border-top: 1px solid #eee3d9;
+      padding-top: 0.8rem;
+    }
+
+    /* footer about */
+    .footer-about {
+      margin-top: 5rem;
+      border-top: 1px solid #d9ccbf;
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #4f443b;
+    }
+    .footer-about small {
+      font-size: 0.9rem;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: #4e3f34;
+      margin-left: 2rem;
+      border-bottom: 1px dotted #b9aa99;
+    }
+    .footer-links a:hover {
+      border-bottom: 1px solid #866f5b;
+    }
+
+    @media (max-width: 600px) {
+      .about-header h1 {
+        font-size: 2.8rem;
+      }
+      .about-header h1 span {
+        font-size: 2rem;
+      }
+      .nav-links a {
+        margin-left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- simple navigation (static) with "about us" active -->
+  <div class="top-nav">
+    <div class="logo-mark">✦ about us</div>
+    <div class="nav-links">
+      <a href="#">home</a>
+      <a href="#" class="active">about</a>
+      <a href="#">journal</a>
+      <a href="#">contact</a>
+    </div>
+  </div>
+
+  <!-- main about header -->
+  <div class="about-header">
+    <h1>We believe in <span>slow, honest</span> craft. <br>And the people behind it.</h1>
+    <div class="sub">About us — a small team, a big story. Founded in 2018 to bring clarity and intention back to the digital space.</div>
+  </div>
+
+  <!-- story grid: text + highlights -->
+  <div class="story-grid">
+    <div class="story-text">
+      <h2>Our story</h2>
+      <p class="lead">It started with a notebook and a question: why do so many brands feel the same? We wanted to build something that felt like a conversation, not a broadcast.</p>
+      <p>We’re a tiny crew of designers, writers, and curious humans. Over the years we’ve worked with independent makers, small shops, and a few bold companies — always trying to keep things personal, durable, and a bit warm. No algorithms, just genuine connection. This "about us" page is a static reflection of that ethos: simple, human, no trackers. Just story.</p>
+      <p>Based between Stockholm and Lisbon, we try to keep our feet on the ground and our eyes on what matters: quality over scale, and slowness over speed.</p>
+    </div>
+    <div class="story-highlight">
+      <h3>By the way</h3>
+      <ul class="stat-list">
+        <li><strong>7</strong> <span>core humans</span></li>
+        <li><strong>2018</strong> <span>year we started</span></li>
+        <li><strong>68</strong> <span>collaborators & friends</span></li>
+        <li><strong>4</strong> <span>offices (very small)</span></li>
+        <li><strong>∞</strong> <span>cups of coffee</span></li>
+      </ul>
+      <p style="margin-top: 1.5rem; font-style: italic; color:#6a5b4e;">We don’t do investors — we do patience.</p>
+    </div>
+  </div>
+
+  <!-- values / principles -->
+  <div class="values-section">
+    <h2>Three things we carry with us</h2>
+    <div class="value-cards">
+      <div class="value-card">
+        <div class="emoji-big">🪢</div>
+        <h3>slowness</h3>
+        <p>We take the time to listen, to iterate, to let things grow naturally. No forced scaling.</p>
+      </div>
+      <div class="value-card">
+        <div class="emoji-big">🤝</div>
+        <h3>reciprocity</h3>
+        <p>Fairness with everyone: collaborators, customers, and the planet. We’re all connected.</p>
+      </div>
+      <div class="value-card">
+        <div class="emoji-big">👀</div>
+        <h3>clarity</h3>
+        <p>No dark patterns, no jargon. Just honest communication and simple design.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- team section (about us faces) -->
+  <div class="team-section">
+    <h2>Meet a few of us</h2>
+    <div class="team-grid">
+      <!-- team member 1 -->
+      <div class="team-member">
+        <div class="member-avatar">👩🏻‍🦰</div>
+        <h4>Elena Voss</h4>
+        <div class="role">founder · direction</div>
+        <div class="bio-short">Former editor, obsessed with typography and long walks. Keeps us grounded.</div>
+      </div>
+      <!-- team member 2 -->
+      <div class="team-member">
+        <div class="member-avatar">🧑🏽‍🦱</div>
+        <h4>Marcus Tan</h4>
+        <div class="role">creative & code</div>
+        <div class="bio-short">Builds things that feel alive. Loves generative design and silent libraries.</div>
+      </div>
+      <!-- team member 3 -->
+      <div class="team-member">
+        <div class="member-avatar">👩🏼</div>
+        <h4>Signe Berg</h4>
+        <div class="role">story & research</div>
+        <div class="bio-short">Gathers voices, finds the narrative. Previously radio producer, now full‑time listener.</div>
+      </div>
+      <!-- team member 4 -->
+      <div class="team-member">
+        <div class="member-avatar">🧔🏻‍♂️</div>
+        <h4>Jonas K.</h4>
+        <div class="role">operations & care</div>
+        <div class="bio-short">Makes sure everything runs smoothly – and that we pause for fika.</div>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 2.5rem; color:#6d5c4d;">(we’re a small team — these are just a few of us. the rest prefer to stay behind the scenes.)</p>
+  </div>
+
+  <!-- tiny extra: another story layer, just because about us can be deeper -->
+  <div style="background: #eae1d7; border-radius: 48px; padding: 2.2rem 2.5rem; margin: 3rem 0 2rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+      <div style="flex: 1; font-size: 4rem;">📖</div>
+      <div style="flex: 5;">
+        <h3 style="font-size: 1.8rem; font-weight: 350; margin-bottom: 0.5rem;">We publish a small journal, too.</h3>
+        <p style="font-size: 1.2rem; color:#3f342d;">Interviews, thoughts on craft, and occasional recipes. It’s called “The Steady Stack” — no ads, no spam.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer (about us context) -->
+  <div class="footer-about">
+    <div><small>© 2025 · about us page — static & genuine. no tracking.</small></div>
+    <div class="footer-links">
+      <a href="#">story</a>
+      <a href="#">principles</a>
+      <a href="#">contact</a>
+    </div>
+  </div>
+
+  <!-- quiet sign off -->
+  <div style="text-align: right; margin-top: 2.5rem; color: #b3a089; border-top: 1px dotted #d6cbbc; padding-top: 1rem; font-size: 0.9rem;">
+    ✦ about us — the people behind the work ✦
+  </div>
+
+</div> <!-- end container -->
+</body>
+</html>
