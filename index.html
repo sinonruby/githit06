@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Fragrances · DataBazar</title>
+  <!-- pure static editorial style, zero JS, refined typography -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f6f3ef;  ·  soft parchment
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2a2825;
+      line-height: 1.5;
+    }
+
+    /* fallback font stack if Inter missing */
+    @supports (font-variation-settings: normal) {
+      body { font-family: 'Inter var', sans-serif; }
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2.4rem 2rem;
+    }
+
+    /* header – luxurious but restrained */
+    .brand-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid #dcd3c9;
+      padding-bottom: 1.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .logo h1 {
+      font-size: 2.4rem;
+      font-weight: 350;
+      letter-spacing: -0.02em;
+      color: #3f352b;
+    }
+
+    .logo h1 span {
+      font-weight: 600;
+      background: #c9b698;  ·  warm gold taupe
+      color: #1f1b16;
+      padding: 0.15rem 0.9rem 0.25rem 0.9rem;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      margin-left: 1rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .bazar-tag {
+      font-size: 1.2rem;
+      font-weight: 350;
+      color: #6e5e4f;
+      border: 1px solid #cec1b2;
+      border-radius: 60px;
+      padding: 0.3rem 1.5rem;
+      backdrop-filter: blur(2px);
+    }
+
+    /* abstract data banner */
+    .data-panel {
+      background: #e7dfd5;
+      border-radius: 42px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #b9aa99;
+      box-shadow: 0 8px 18px -8px rgba(60, 40, 20, 0.1);
+    }
+
+    .data-stats {
+      display: flex;
+      gap: 2.8rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      color: #5f4d3b;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1.2;
+      color: #372f26;
+      border-bottom: 2px solid #ac9b88;
+    }
+
+    .stat-desc {
+      font-size: 0.9rem;
+      color: #4f443b;
+    }
+
+    .data-cta {
+      background: #3f352b;
+      color: #f0e4d6;
+      padding: 0.9rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      border: none;
+      box-shadow: 0 6px 12px rgba(55, 40, 20, 0.15);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .data-cta small {
+      font-weight: 300;
+      opacity: 0.8;
+    }
+
+    /* featured section: fragrance database */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 2.5rem 0 1.8rem 0;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 400;
+      color: #2d241e;
+    }
+
+    .section-header .badge {
+      background: #dbd0c2;
+      padding: 0.3rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2c241c;
+    }
+
+    /* fragrance grid — elegant cards */
+    .fragrance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem 1.8rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .perfume-card {
+      background: #ffffffde;
+      backdrop-filter: blur(2px);
+      border-radius: 36px;
+      padding: 1.8rem 1.5rem 1.8rem 1.5rem;
+      box-shadow: 0 10px 20px -10px rgba(70, 50, 30, 0.08);
+      border: 1px solid #e3d8cc;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .perfume-card:hover {
+      transform: translateY(-5px);
+      border-color: #b29e88;
+      box-shadow: 0 22px 28px -16px #5f4e3e;
+    }
+
+    .perfume-initials {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+      letter-spacing: 2px;
+    }
+
+    .perfume-name {
+      font-size: 1.8rem;
+      font-weight: 350;
+      line-height: 1.2;
+      color: #231f1a;
+      margin-bottom: 0.2rem;
+    }
+
+    .perfumer {
+      font-size: 0.95rem;
+      color: #7a6856;
+      margin-bottom: 1rem;
+      border-bottom: 1px dashed #dacfc4;
+      padding-bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.6rem;
+      margin: 1rem 0 1rem 0;
+    }
+
+    .note-tag {
+      background: #efe7de;
+      color: #423b33;
+      font-size: 0.75rem;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      border: 1px solid #cabcaa;
+    }
+
+    .data-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #4e4136;
+      margin-top: 0.7rem;
+      border-top: 1px solid #e5dbd0;
+      padding-top: 0.7rem;
+    }
+
+    .price-tag {
+      font-weight: 600;
+      color: #3c362e;
+    }
+
+    /* extended bazar table – data marketplace */
+    .analytics-section {
+      background: #f1ebe4;
+      border-radius: 48px;
+      padding: 2.8rem 2.5rem;
+      margin: 3.5rem 0 2rem;
+      border: 1px solid #cfbfad;
+    }
+
+    .analytics-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .analytics-header h3 {
+      font-size: 2rem;
+      font-weight: 350;
+      color: #32271f;
+    }
+
+    .analytics-header .pill {
+      background: #b9a28b;
+      color: #1f1a15;
+      border-radius: 60px;
+      padding: 0.4rem 1.5rem;
+      font-weight: 450;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      background: #faf7f3;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(53, 38, 28, 0.05);
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 1.2rem 1.5rem;
+      background: #e1d4c5;
+      color: #2e241e;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .data-table td {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid #ded2c4;
+      color: #392f27;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table td:first-child, .data-table th:first-child { padding-left: 2rem; }
+    .data-table td:last-child, .data-table th:last-child { padding-right: 2rem; }
+
+    .highlight-number {
+      font-weight: 600;
+      color: #4f3e2e;
+    }
+
+    .rating-star {
+      color: #b4946b;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    /* secondary info / dossier */
+    .dossier-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 3rem 0 2rem;
+    }
+
+    .dossier-item {
+      flex: 1 1 240px;
+      background: #fffcf8;
+      border-radius: 28px;
+      padding: 1.8rem 1.8rem;
+      border: 1px solid #dacfc3;
+    }
+
+    .dossier-item h4 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: #3f3329;
+      margin-bottom: 0.5rem;
+    }
+
+    .dossier-item ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .dossier-item li {
+      padding: 0.4rem 0;
+      border-bottom: 1px dotted #dacbbc;
+      display: flex;
+      justify-content: space-between;
+      color: #5b4d3f;
+    }
+
+    .footer-bazar {
+      border-top: 1px solid #cbbcad;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #4f4238;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #6b5a4b;
+      margin-left: 2rem;
+      border-bottom: 1px dotted transparent;
+    }
+
+    .footer-links a:hover {
+      border-bottom: 1px dotted #8b7563;
+    }
+
+    /* responsive elegance */
+    @media (max-width: 700px) {
+      .brand-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .data-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+      .data-stats {
+        gap: 1.5rem;
+      }
+      .analytics-section {
+        padding: 2rem 1.5rem;
+      }
+      .data-table th, .data-table td {
+        padding: 1rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header: luxury fragrances + databazar -->
+  <div class="brand-bar">
+    <div class="logo">
+      <h1>LUXURY FRAGRANCES <span>DataBazar</span></h1>
+      <div style="font-size: 0.9rem; color: #6f5e4e; margin-top: 0.2rem;"> · premium perfume intelligence</div>
+    </div>
+    <div class="bazar-tag">📊 v.2025 / static directory</div>
+  </div>
+
+  <!-- data banner – marketplace abstract -->
+  <div class="data-panel">
+    <div class="data-stats">
+      <div class="stat-item">
+        <span class="stat-label">reference fragrances</span>
+        <span class="stat-number">847</span>
+        <span class="stat-desc">niche & heritage</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">olfactive families</span>
+        <span class="stat-number">24</span>
+        <span class="stat-desc">+ chypre, fougère</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">data points</span>
+        <span class="stat-number">14.2k</span>
+        <span class="stat-desc">prices · notes · perfumers</span>
+      </div>
+    </div>
+    <div class="data-cta">
+      <span>📋 explore bazar</span> <small>static demo</small>
+    </div>
+  </div>
+
+  <!-- featured perfumes grid – "database sampling" -->
+  <div class="section-header">
+    <h2>✻ fragrance archive (featured extraits)</h2>
+    <div class="badge">updated monthly · static</div>
+  </div>
+
+  <div class="fragrance-grid">
+    <!-- card 1 -->
+    <div class="perfume-card">
+      <div class="perfume-initials">№ 19</div>
+      <div class="perfume-name">Bois d’Argent</div>
+      <div class="perfumer">Annick Ménardo · 2004</div>
+      <div class="notes">
+        <span class="note-tag">iris</span>
+        <span class="note-tag">myrrh</span>
+        <span class="note-tag">vetiver</span>
+      </div>
+      <div class="data-row">
+        <span>vintage index</span><span class="price-tag">✦ 94/100</span>
+      </div>
+      <div class="data-row">
+        <span>avg. price / 50ml</span><span class="price-tag">€235</span>
+      </div>
+    </div>
+
+    <!-- card 2 -->
+    <div class="perfume-card">
+      <div class="perfume-initials">🇫🇷</div>
+      <div class="perfume-name">Rose Barbare</div>
+      <div class="perfumer">Francis Kurkdjian · 2008</div>
+      <div class="notes">
+        <span class="note-tag">rose centifolia</span>
+        <span class="note-tag">honey</span>
+        <span class="note-tag">oud</span>
+      </div>
+      <div class="data-row">
+        <span>rarity</span><span class="price-tag">限量版</span>
+      </div>
+      <div class="data-row">
+        <span>market value</span><span class="price-tag">€390</span>
+      </div>
+    </div>
+
+    <!-- card 3 -->
+    <div class="perfume-card">
+      <div class="perfume-initials">⚜️</div>
+      <div class="perfume-name">Cuir de Russie</div>
+      <div class="perfumer">Chanel · 1927 (exclusif)</div>
+      <div class="notes">
+        <span class="note-tag">leather</span>
+        <span class="note-tag">tobacco</span>
+        <span class="note-tag">iris</span>
+      </div>
+      <div class="data-row">
+        <span>heritage score</span><span class="price-tag">9.2/10</span>
+      </div>
+      <div class="data-row">
+        <span>extrait price</span><span class="price-tag">€420</span>
+      </div>
+    </div>
+
+    <!-- card 4 -->
+    <div class="perfume-card">
+      <div class="perfume-initials">#8</div>
+      <div class="perfume-name">Oud Wood</div>
+      <div class="perfumer">Tom Ford · 2007</div>
+      <div class="notes">
+        <span class="note-tag">oud</span>
+        <span class="note-tag">sandalwood</span>
+        <span class="note-tag">cardamom</span>
+      </div>
+      <div class="data-row">
+        <span>popularity rank</span><span class="price-tag">#3 (niche)</span>
+      </div>
+      <div class="data-row">
+        <span>retail (2025)</span><span class="price-tag">€285</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DataBazar analytics table – luxury pricing & notes -->
+  <div class="analytics-section">
+    <div class="analytics-header">
+      <h3>📋 perfume databazar · market snapshot</h3>
+      <span class="pill">17 houses · limited series</span>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr><th> fragrance</th><th>house</th><th>olfactive family</th><th>price index</th><th>longevity</th><th>data</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Oud Satin Mood</td><td>Maison Francis Kurkdjian</td><td>oriental</td><td>€295</td><td>12h+</td><td class="highlight-number">★ 4.8</td></tr>
+        <tr><td>Do Son</td><td>Diptyque</td><td>floral · tuberose</td><td>€165</td><td>7h</td><td class="highlight-number">★ 4.5</td></tr>
+        <tr><td>Black Afgano</td><td>Nasomatto</td><td>woody narcotic</td><td>€240</td><td>10h</td><td class="highlight-number">★ 4.7</td></tr>
+        <tr><td>L'Air du Désert Marocain</td><td>Tauer</td><td>spicy amber</td><td>€175</td><td>9h</td><td class="highlight-number">★ 4.9</td></tr>
+        <tr><td>Iris Prima</td><td>Penhaligon's</td><td>leather / iris</td><td>€230</td><td>8h</td><td class="highlight-number">★ 4.4</td></tr>
+        <tr><td>Enclave</td><td>Amouage</td><td>aromatic mint</td><td>€345</td><td>11h</td><td class="highlight-number">★ 4.6</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 1.8rem; display: flex; justify-content: flex-end; font-size: 0.95rem; gap: 2rem; color: #4c3c30;">
+      <span>📊 274 additional references in bazar</span>
+      <span>⚡ static demo — not a shop</span>
+    </div>
+  </div>
+
+  <!-- dossier: houses, perfumers, rare data -->
+  <div class="dossier-grid">
+    <div class="dossier-item">
+      <h4>🏛️ heritage houses</h4>
+      <ul>
+        <li>Guerlain <span>since 1828</span></li>
+        <li>Chanel <span>21 exclusifs</span></li>
+        <li>Dior (Privée) <span>18 references</span></li>
+        <li>Roja Dove <span>haute parfumerie</span></li>
+      </ul>
+    </div>
+    <div class="dossier-item">
+      <h4>👃 master perfumers</h4>
+      <ul>
+        <li>Jean-Claude Ellena <span>56 frag.</span></li>
+        <li>Christine Nagel <span>Hermès</span></li>
+        <li>Alberto Morillas <span>Mugler</span></li>
+        <li>Mathilde Laurent <span>Cartier</span></li>
+      </ul>
+    </div>
+    <div class="dossier-item">
+      <h4>📈 price evolution</h4>
+      <ul>
+        <li>Création de la Mer <span>+5.2%</span></li>
+        <li>Oud Ispahan <span>+8% (2024)</span></li>
+        <li>Baccarat Rouge 540 <span>€345/extrait</span></li>
+        <li>Avignon (CDG) <span>stable</span></li>
+      </ul>
+    </div>
+    <div class="dossier-item">
+      <h4>🔍 rare extraits</h4>
+      <ul>
+        <li>Jubilation 25 <span>man</span></li>
+        <li>Mitsouko extrait <span>vintage</span></li>
+        <li>Patou Pour Homme <span>discontinued</span></li>
+        <li>Iris 39 (Le Labo) <span>city exclusive</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- static bazar footer (pure info) -->
+  <div class="footer-bazar">
+    <div>© 2025 · Luxury Fragrances DataBazar — static concept / editorial</div>
+    <div class="footer-links">
+      <a href="#">olfactive archive</a>
+      <a href="#">price index</a>
+      <a href="#">perfumer database</a>
+    </div>
+  </div>
+
+  <!-- quiet indicator: static HTML, zero javascript -->
+  <div style="text-align: right; margin-top: 1.8rem; color: #ac9a87; font-size: 0.8rem; border-top: 1px dotted #dacfc4; padding-top: 0.8rem;">
+    ✦ explore luxury fragrances · databazar static page ✦
+  </div>
+
+</div> <!-- end container -->
+</body>
+</html>
