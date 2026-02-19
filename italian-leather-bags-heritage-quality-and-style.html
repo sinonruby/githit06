@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Italian Leather Bags – Heritage, Quality, and Style</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background-color: #fcf9f5;
+      color: #2e2a27;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* typography */
+    h1, h2, h3, .logo-font {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #3b2e24;
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #e1cdb5;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #5e412b;
+    }
+
+    /* header */
+    .hero {
+      background: linear-gradient(rgba(40, 27, 16, 0.5), rgba(40, 27, 16, 0.3)), url('https://images.unsplash.com/photo-1591561954555-607968c989ab?w=1200&auto=format&fit=crop') center/cover no-repeat;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      margin-bottom: 3rem;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin-top: 1rem;
+      background: rgba(0,0,0,0.2);
+      padding: 0.5rem 1rem;
+      display: inline-block;
+    }
+
+    /* cards and sections */
+    .section {
+      margin: 4rem 0;
+    }
+
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px -10px rgba(95, 67, 38, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-bottom: 3px solid #dbb68c;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content p {
+      color: #4d423b;
+    }
+
+    .icon-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .icon-list li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .icon-list i {
+      color: #b37b48;
+      width: 1.5rem;
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+    }
+
+    .inset-quote {
+      background: #ede3d7;
+      padding: 2rem;
+      border-radius: 24px;
+      font-style: italic;
+      font-size: 1.25rem;
+      border-left: 6px solid #b37b48;
+      margin: 2rem 0;
+    }
+
+    .inset-quote span {
+      display: block;
+      margin-top: 1rem;
+      font-style: normal;
+      font-weight: 600;
+      color: #5e412b;
+    }
+
+    .badge {
+      background: #5e412b;
+      color: #f3e9de;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    /* footer */
+    footer {
+      background: #2e2a27;
+      color: #d9cdc0;
+      padding: 2.5rem 0;
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #e1b282;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* responsiveness */
+    @media (max-width: 800px) {
+      h1 { font-size: 2.5rem; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .hero { min-height: 50vh; }
+    }
+
+    @media (max-width: 500px) {
+      .container { padding: 0 1rem; }
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #dbb68c, transparent);
+      margin: 2rem 0;
+    }
+
+    .small-print {
+      font-size: 0.85rem;
+      color: #7b6e64;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero section -->
+  <header class="hero">
+    <div class="container hero-content">
+      <span class="badge">Artigianato Italiano</span>
+      <h1>Italian Leather Bags<br><span style="font-size: 1.8rem; font-weight: 300;">timeless quality & style</span></h1>
+      <p>From Tuscan tanneries to global icons — a guide to discerning true craftsmanship</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- introduction -->
+    <section class="section">
+      <h2>Generations of mastery</h2>
+      <div class="grid-2" style="align-items: center;">
+        <div>
+          <p style="font-size: 1.2rem; font-weight: 300;">For over a millennium, Italian leather artisans have transformed raw hides into objects of desire. The secret lies not just in the fertile lands of Tuscany or the pure waters of the Arno, but in a philosophy: <strong>slow making, fastidious detail, and respect for the material.</strong></p>
+          <p style="margin-top: 1rem;">A genuine Italian leather bag is never just an accessory — it is a companion that ages gracefully, developing a patina that tells your story. This guide explores the heritage, the varieties, and the care that keep these pieces eternally stylish.</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&auto=format&fit=crop" alt="Artisan working on leather in Florentine workshop" style="width:100%; border-radius: 24px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+          <p class="small-print">Florence, 2023 — artisan finishing a bag by hand</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- types of leather (grid 3) -->
+    <section class="section">
+      <h2>Five noble leathers</h2>
+      <div class="grid-3">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1601593346740-925f7724c445?w=600&auto=format&fit=crop" alt="Vachetta leather natural texture">
+          <div class="card-content">
+            <h3>Vachetta</h3>
+            <p>Untreated, full-grain leather from calf or cow. Develops a rich golden-brown patina over time. Used for luxury linings and trim. Must be protected from water and direct sun.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?w=600&auto=format&fit=crop" alt="Saffiano textured leather">
+          <div class="card-content">
+            <h3>Saffiano</h3>
+            <p>Patented by Prada, this calfskin leather gets a distinctive cross-hatch print and wax finish. Highly resistant to scratches and stains — the definition of everyday elegance.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=600&auto=format&fit=crop" alt="Soft Nappa leather">
+          <div class="card-content">
+            <h3>Nappa</h3>
+            <p>Ultra-soft, supple lambskin or calfskin, tumbled for a buttery hand-feel. Often used for slouchy hobos and clutches. Requires gentle care but rewards with unmatched luxury.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=600&auto=format&fit=crop" alt="Cuoio vegetale leather">
+          <div class="card-content">
+            <h3>Cuoio (Vegetale)</h3>
+            <p>Vegetable-tanned with natural tannins from chestnut and mimosa. Stiff when new, it molds to your body over years. The true "heritage" leather of Tuscany.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1594223274512-d480b3997b96?w=600&auto=format&fit=crop" alt="Smooth calfskin leather">
+          <div class="card-content">
+            <h3>Calfskin</h3>
+            <p>Fine-grained, durable and uniform. The workhorse of high-end bags — from boxcalf (glossy) to grained versions. Offers structure and longevity.</p>
+          </div>
+        </div>
+        <div class="card">
+          <!-- extra card for visual balance: craftsmanship summary -->
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop" alt="Elegant leather tote bag">
+          <div class="card-content">
+            <h3>Timeless shapes</h3>
+            <p>Bauletto, tote, cross-body — Italian brands reinterpret classic silhouettes each season, but the construction remains anchored in tradition.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- craftsmanship / tannery section -->
+    <section class="section">
+      <h2>The art of conciatura</h2>
+      <div class="grid-2" style="margin-bottom: 2rem;">
+        <div>
+          <img src="https://images.unsplash.com/photo-1606741965425-98b8f0b1b8b2?w=800&auto=format&fit=crop" alt="Leather tanning drums in Santa Croce sull'Arno" style="width:100%; border-radius: 20px;">
+          <p class="small-print">Tanning drums, Santa Croce sull'Arno — the heart of leather district</p>
+        </div>
+        <div>
+          <p>Italian leather is inseparable from its tanning regions: <strong>Santa Croce sull'Arno</strong> (Tuscany) for vegetable-tanned excellence, <strong>Arzignano</strong> (Veneto) for high-tech chrome tanning. Here, hides are soaked, tumbled, dyed, and finished with techniques passed down for generations.</p>
+          <ul class="icon-list">
+            <li><i class="fas fa-feather-alt"></i> <strong>Vegetable tanning:</strong> 40–60 days in natural vats, yields leather that breathes and develops patina.</li>
+            <li><i class="fas fa-tint"></i> <strong>Chrome tanning:</strong> Faster, softer, and more colorfast — ideal for modern saturated hues.</li>
+            <li><i class="fas fa-hand-sparkles"></i> <strong>Hand finishing:</strong> Many bags receive hand-burnished edges, hand-stitched handles, and hand-dyed touches.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- how to spot quality (checklist style) -->
+    <section class="section">
+      <h2>Spotting authentic quality</h2>
+      <div class="inset-quote">
+        <i class="fas fa-quote-left" style="color: #b37b48; margin-right: 0.5rem;"></i> 
+        A well-made Italian bag feels balanced, smells of clean leather (not chemicals), and shows attention to hidden details.
+        <span>— Luca Mazzilli, third-generation leather craftsman, Naples</span>
+      </div>
+      <div class="grid-3" style="margin-top: 2rem;">
+        <div class="card" style="background: #f4ede5; box-shadow: none; padding: 1.5rem;">
+          <i class="fas fa-cut" style="font-size: 2rem; color: #b37b48;"></i>
+          <h3 style="margin: 0.5rem 0;">Edges & stitching</h3>
+          <p>Edges should be painted or burnished smoothly, with no rough layers. Stitches are even, tight, and often slanted (saddle stitch).</p>
+        </div>
+        <div class="card" style="background: #f4ede5; box-shadow: none; padding: 1.5rem;">
+          <i class="fas fa-search" style="font-size: 2rem; color: #b37b48;"></i>
+          <h3 style="margin: 0.5rem 0;">Grain & consistency</h3>
+          <p>Full-grain leather shows natural marks (pores, scars) — that's authenticity. Corrected-grain can be too uniform; both are fine if done in Italy.</p>
+        </div>
+        <div class="card" style="background: #f4ede5; box-shadow: none; padding: 1.5rem;">
+          <i class="fas fa-tag" style="font-size: 2rem; color: #b37b48;"></i>
+          <h3 style="margin: 0.5rem 0;">Made in Italy</h3>
+          <p>Look for "Pelle Italiana" or "Conciato in Italia" marks. Many brands assemble abroad but use Italian leather — still high quality, but not entirely "Made in Italy".</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- care guide -->
+    <section class="section">
+      <h2>Custody & care</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+        <div style="flex: 1 1 250px;">
+          <img src="https://images.unsplash.com/photo-1606503825008-909a67e63c3d?w=600&auto=format&fit=crop" alt="Leather care products" style="width:100%; border-radius: 32px;">
+        </div>
+        <div style="flex: 2 1 400px;">
+          <ul class="icon-list">
+            <li><i class="fas fa-tint-slash"></i> <strong>Water is enemy #1:</strong> Use a rain protector spray made for leather. If wet, blot gently and air dry — never near heat.</li>
+            <li><i class="fas fa-cloud-sun"></i> <strong>Avoid prolonged sun:</strong> UV fades color and dries out fibers. Store in a dust bag when not in use.</li>
+            <li><i class="fas fa-oil-can"></i> <strong>Condition every 4–6 months:</strong> Use a cream or balm suited to your leather type (especially for vachetta and vegetable-tanned).</li>
+            <li><i class="fas fa-rotate-left"></i> <strong>Rotate your bags:</strong> Let leather rest to regain shape. Stuff with acid-free tissue paper.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- timeless style mini gallery -->
+    <section class="section">
+      <hr>
+      <h2 style="border-bottom: none; display: block; text-align: center;">Iconic silhouettes, forever modern</h2>
+      <div class="grid-3" style="margin: 2rem 0;">
+        <div><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop" alt="Tote bag" style="width:100%; border-radius: 32px;"></div>
+        <div><img src="https://images.unsplash.com/photo-1591561954555-607968c989ab?w=600&auto=format&fit=crop" alt="Shoulder bag" style="width:100%; border-radius: 32px;"></div>
+        <div><img src="https://images.unsplash.com/photo-1614179724197-3c3f561e827b?w=600&auto=format&fit=crop" alt="Crossbody bag" style="width:100%; border-radius: 32px;"></div>
+      </div>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto;">From the structured <em>bauletto</em> of the 1950s to today's minimalist crossbodies, Italian design never chases trends — it sets them. Choose a shape that fits your life, and it will remain stylish for decades.</p>
+    </section>
+  </main>
+
+  <!-- footer with image credits -->
+  <footer>
+    <div class="container">
+      <p><i class="far fa-heart" style="color: #d49c6c;"></i>   La Dolce Vita   <i class="far fa-heart" style="color: #d49c6c;"></i></p>
+      <p style="margin-top: 1.5rem; font-size: 0.9rem;">© 2025 Italian Leather Bags Guide — created with passion for timeless craftsmanship</p>
+      <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.7;">Photos courtesy of <a href="https://unsplash.com">Unsplash</a>: workshop by Marie Montiveros, bags by Ale Romo, Félix Prado, Kien Do, and others. All rights belong to their respective owners.</p>
+    </div>
+  </footer>
+</body>
+</html>
